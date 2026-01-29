@@ -302,7 +302,7 @@ button#action-btn:hover {
 
     /* 當我們點擊漢堡，幫 nav-links 加上 "active" class 就會顯示 */
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links li {
