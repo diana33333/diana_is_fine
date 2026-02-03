@@ -405,6 +405,56 @@ button#action-btn:hover {
     overflow: hidden;
 }
 
+/* 藝廊容器 */
+.gallery-container {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* 微透明背景感 */
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center; /* 讓裡面的 span 和 h2 都置中 */
+}
+
+.gallery-title {
+    text-align: center;
+    color: #4a148c;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* 網格核心設定 */
+.clavis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 自動計算寬度 */
+    grid-auto-rows: 150px; /* 每一格的基本高度 */
+    gap: 15px;
+    grid-auto-flow: dense; /* 自動填滿空隙 */
+}
+
+.grid-item {
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 確保圖片不變形 */
+    pointer-events: none; /* 基礎防盜：禁止拖拽 */
+}
+
+/* 懸停效果：滑鼠移上去稍微變大 */
+.grid-item:hover {
+    transform: scale(1.03);
+    border-color: #4a148c;
+}
+
+/* 特殊形狀控制 */
+.item-portrait { grid-row: span 2; }   /* 直圖佔兩格高度 */
+.item-landscape { grid-column: span 2; } /* 橫圖佔兩格寬度 */
+.item-square { grid-row: span 1; grid-column: span 1; }
  
 
 /* button {
