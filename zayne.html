@@ -6,6 +6,96 @@
     <title>zayne</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/uplogo.webp" type="image/x-icon">
+    <style>
+        /* 專屬三張直圖並排的網格設定 */
+        .triple-portrait-grid {
+            display: grid;
+            /* 強制分成三列，每列等寬 */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px; /* 圖片之間的間距 */
+            margin-top: 20px;
+        }
+
+        /* 確保圖片在直版狀態下的比例美觀 */
+        .triple-portrait-grid .marius-img-item {
+            aspect-ratio: 2 / 3; /* 設定為標準的直式比例 */
+            width: 100%;
+        }
+        /* 專屬於小黎頁面的橫版圖片微調 */
+        .marius-full-display {
+            max-width: 600px !important; /* 縮小寬度，讓它在 800px 的白底裡更精緻 */
+            margin: 20px auto !important; /* 確保在白色塊內水平置中 */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(74, 20, 140, 0.15); /* 增加一點點紫色陰影質感 */
+            transition: transform 0.3s ease;
+        }
+
+        .marius-full-display img {
+            width: 100% !important;
+            height: auto !important; /* 確保不裁切到婚卡素材 */
+            display: block;
+        }
+
+        /* 保持 Hover 時的縮放效果 */
+        .marius-full-display:hover {
+            transform: scale(1.03);
+        }
+        /* 專屬兩張直圖並排的設定 */
+        .double-portrait-grid {
+            display: grid;
+            /* 強制分成兩列，每列等寬 */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; /* 增加一點圖片間的間距 */
+            margin: 20px auto 0 auto;
+            max-width: 600px; /* 縮小網格總寬度，讓兩張直圖看起來不會太巨大 */
+        }
+
+        /* 確保圖片維持美觀的直式比例 */
+        .double-portrait-grid .marius-img-item {
+            aspect-ratio: 2 / 3; 
+            width: 100%;
+        }
+        /* 1. 通用圖片項目的藍色邊框 */
+        .marius-img-item {
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .marius-img-item:hover {
+            transform: scale(1.03);
+            border-color: #155af1 !important; /* 冰藍色邊框 */
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); /* 藍色發光感 */
+        }
+
+        /* 2. 橫版大圖的藍色邊框 */
+        .marius-full-display {
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .marius-full-display:hover {
+            transform: scale(1.02);
+            border-color: #155af1 !important;
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+        }
+
+        /* 3. 調整文字區域對齊與寬度 (確保與前幾頁一致) */
+        .about-text {
+            max-width: 800px !important;
+            margin: 0 auto 30px auto !important;
+            width: 90% !important;
+            text-align: left;
+        }
+
+        .welcome-header {
+            max-width: 800px !important;
+            margin: 40px auto 20px auto !important;
+            width: 90% !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -48,56 +138,59 @@
             </div>
 
             <div class="about-text">
-                <!-- <p>目前在倫敦留學，垃圾話很多的宅宅夢女</p>
+                <!-- <p>目前在倫敦留學，垃圾話很多的宅宅夢女</p> -->
                 <ul class="info-list">
 
                     <li>
-                        <strong>稱呼:33/Diana</strong>
-                        <div class="info-content">叫33比較快 留學後的現友都直接叫我Diana</div>
-                        <div class="info-content">認識多年的現友稱呼可隨意XD</div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>✨關於我本人：</strong>
-                        <div class="info-content">我的帳號我開心就好 相處兩人舒服即可</div>
-                        <div class="info-content">不適合可以直接刪友 不接受破鏡重圓</div>
-                        <div class="info-content">怎麼對待我就怎麼對待你</div>
-                        <div class="info-content">內鬼請離開謝謝 感恩的心🫶</div>
-                        <div class="info-content">偶爾會發日系穿搭照片</div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🆙主坑單+推角：</strong>
-                        <div class="info-content">未定事件簿 ♡陸景和</div>
-                        <div class="info-content">美男王子 ♡克拉維斯</div>
-                        <div class="info-content">戀與深空 ♡黎深</div>
-                        <div class="info-content">Chiikawa ♡Momonga</div>
-                        <div class="info-content">ASMRZ ♡車清一 </div>
-                        <div class="info-content">光與夜之戀 ♡蕭逸&查理蘇 </div>
-                        <div class="info-content">Lovelyz ♡Kei </div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🔅其餘坑單：</strong>
-                        <span class="info-note">推角很多不一一列出 基本上會追整個企畫或系列</span>
-                        <div class="info-content">LoveLive!! </div>
-                        <div class="info-content">BangDream</div>
-                        <div class="info-content">日本聲優 </div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🌐Find Me</strong>
-                        <span class="info-note">IG有現生帳號 見過面再交換/我們真的很熟可以交換!</span>
-                        <div class="info-content">
-                            <a href="https://www.facebook.com/share/14TUYsykUCv/" target="_blank" class="social-link">臉書本帳 (私訊直接找這支)</a>
-                        </div>
-                            
-                        <div class="info-content">
-                            <a href="https://www.instagram.com/diana._.33_shan?igsh=MXEyb3c3azRucHV2eA==" target="_blank" class="social-link">Instagram (追星公開帳號)</a>
-                        </div>
-                    </li>
+                        <strong>戀與深空</strong>
+                        <span class="info-note">2025年4月才開始玩 等復刻補卡QUQ</span>
+                        <div class="info-content">人在台灣時都會跑深空線下活動! 除非擠不出時間QAQ</div>
+                        
+                        <br>
+                        <b><div class="info-content">喜歡黎深但不是夢女 沒有任何夢創作 只會在遊戲內拍拍照....</div></b>
+                        <span class="info-content">很意外會喜歡黎深 他完全不是我會喜歡的類型...可是我好愛這隻可愛大貓貓quq</span>
+                        <div class="info-content">放點好看模板拍出來的相片~</div>
+                        <div class="info-content">可加台服好友:85000658409</div>
 
-                </ul> -->
+                    </li>
+                </ul>
+                <!-- <div class="article-btn-container">
+                    <a href="妳的文章連結.html" class="article-action-btn">
+                        <span>📖 閱讀夢向圖文創作</span>
+                    </a>
+                </div> -->
+                <!-- <div class="article-btn-container">
+                        <button id="action-btn">📖 閱讀夢向文章創作</button>
+                </div> -->
+            </div>
+            <div class="marius-center-box">
+                <!-- <h2 class="gallery-title">婚卡真的太喜歡了!!!!!</h2> -->
+                <div class="triple-portrait-grid">
+                    <div class="marius-img-item"><img src="images/zayne1.webp"></div>
+                    <div class="marius-img-item"><img src="images/zayne2.webp"></div>
+                    <div class="marius-img-item"><img src="images/zayne3.webp"></div>
+                </div>
+            </div>
+
+            <div class="marius-center-box">
+                <h2 class="gallery-title">婚卡真的太喜歡了!!!!!</h2>
+                <!-- <span class="info-note">私人委託請勿盜用!! (繪製: Arics/Ayu)</span> -->
+                
+                <div class="double-portrait-grid">
+                        <div class="marius-img-item"><img src="images/zayne_v1.webp"></div>
+                        <div class="marius-img-item"><img src="images/zayne_v2.webp"></div>
+                </div>
+            </div>
+
+            <div class="marius-center-box">
+                <h2 class="gallery-title">❄️ 貼點喜歡的照片quq</h2>
+                
+                <div class="marius-full-display">
+                    <img src="images/zayne_h.webp">
+                </div>
+                <div class="marius-full-display">
+                    <img src="images/zayne_h2.webp">
+                </div>
             </div>
 
         </section>

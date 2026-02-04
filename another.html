@@ -6,6 +6,96 @@
     <title>another</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/uplogo.webp" type="image/x-icon">
+    <style>
+    /* 讓 ID 代碼塊看起來更精緻 */
+    .copy-id {
+        background-color: rgba(225, 190, 231, 0.3) !important; /* 淺紫色背景 */
+        color: #4a148c !important; /* 深紫色文字，與全站主色一致 */
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: 'Courier New', Courier, monospace; 
+        font-weight: bold;
+        border: 1px solid rgba(123, 31, 162, 0.2);
+        margin-left: 5px;
+        cursor: text;
+        transition: all 0.2s ease;
+    }
+
+    /* 當滑鼠移到 ID 上時的效果 */
+    .copy-id:hover {
+        background-color: rgba(225, 190, 231, 0.5);
+        border-color: #7b1fa2; /* 中紫色邊框亮起 */
+    }
+
+    /* 遊戲截圖網格的邊框也同步改回紫色 */
+    .screenshot-item {
+        border: 1px solid rgba(123, 31, 162, 0.2) !important;
+    }
+
+    .screenshot-item:hover {
+        border-color: #7b1fa2 !important;
+        box-shadow: 0 6px 15px rgba(123, 31, 162, 0.3) !important;
+    }
+    /* 坑位群組間距 */
+    .char-group {
+        margin: 15px 0;
+    }
+
+    /* 橫向排列容器：數量多時自動換行 */
+    .fav-char-flex {
+        display: flex;
+        flex-wrap: wrap; /* 關鍵：讓 7 個人的 LL 能自動排成兩行 */
+        gap: 10px;
+        margin-top: 5px;
+        padding-left: 5px;
+    }
+
+    /* 正方形小圖框 */
+    .char-thumb {
+        width: 60px; /* 稍微縮小一點，並排時更精緻 */
+        height: 60px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid rgba(123, 31, 162, 0.15);
+        background: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .char-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 統一裁切成正方形 */
+    }
+
+    /* 懸停效果：紫色發光 */
+    .char-thumb:hover {
+        transform: scale(1.1);
+        border-color: #7b1fa2;
+        box-shadow: 0 4px 12px rgba(123, 31, 162, 0.3);
+    }
+    /* 放大後的黑底遮罩 */
+    .img-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.85); /* 深色半透明背景 */
+        display: none; /* 預設隱藏 */
+        justify-content: center;
+        align-items: center;
+        z-index: 10000; /* 確保在最上層 */
+        cursor: zoom-out;
+    }
+
+    /* 遮罩內的放大圖片 */
+    .img-overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease;
+    }
+    </style>
+
 </head>
 <body>
 
@@ -46,58 +136,64 @@
                 <h1 class="welcome-title">Another</h1>
             </div>
 
-            <!-- <div class="about-text">
-                <p>目前在倫敦留學，垃圾話很多的宅宅夢女</p>
+            <div class="about-text">
+                <!-- <p>目前在倫敦留學，垃圾話很多的宅宅夢女</p> -->
                 <ul class="info-list">
-
                     <li>
-                        <strong>稱呼:33/Diana</strong>
-                        <div class="info-content">叫33比較快 留學後的現友都直接叫我Diana</div>
-                        <div class="info-content">認識多年的現友稱呼可隨意XD</div>
+                        <strong>遊戲</strong>
+                        <span class="info-note">可以++ 加了可以跟我說一聲~ 怕遺漏了><</span>
+                        <div class="info-content">深空台服：<code class="copy-id">85000658409</code></div>
+                        <div class="info-content">未定台服：<code class="copy-id">100047498</code></div>
+                        <div class="info-content">王子台服：<code class="copy-id">P2MHE59LH</code></div>
+                        <div class="info-content">光夜台服：<code class="copy-id">72920799746138374</code></div>
                     </li>
                     <br>
                     <li>
-                        <strong>✨關於我本人：</strong>
-                        <div class="info-content">我的帳號我開心就好 相處兩人舒服即可</div>
-                        <div class="info-content">不適合可以直接刪友 不接受破鏡重圓</div>
-                        <div class="info-content">怎麼對待我就怎麼對待你</div>
-                        <div class="info-content">內鬼請離開謝謝 感恩的心🫶</div>
-                        <div class="info-content">偶爾會發日系穿搭照片</div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🆙主坑單+推角：</strong>
-                        <div class="info-content">未定事件簿 ♡陸景和</div>
-                        <div class="info-content">美男王子 ♡克拉維斯</div>
-                        <div class="info-content">戀與深空 ♡黎深</div>
-                        <div class="info-content">Chiikawa ♡Momonga</div>
-                        <div class="info-content">ASMRZ ♡車清一 </div>
-                        <div class="info-content">光與夜之戀 ♡蕭逸&查理蘇 </div>
-                        <div class="info-content">Lovelyz ♡Kei </div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🔅其餘坑單：</strong>
-                        <span class="info-note">推角很多不一一列出 基本上會追整個企畫或系列</span>
-                        <div class="info-content">LoveLive!! </div>
-                        <div class="info-content">BangDream</div>
-                        <div class="info-content">日本聲優 </div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🌐Find Me</strong>
-                        <span class="info-note">IG有現生帳號 見過面再交換/我們真的很熟可以交換!</span>
-                        <div class="info-content">
-                            <a href="https://www.facebook.com/share/14TUYsykUCv/" target="_blank" class="social-link">臉書本帳 (私訊直接找這支)</a>
+                        <strong>其餘坑單</strong>
+                        <div class="char-group">
+                            <div class="info-content">NIJI EN：</div>
+                            <div class="fav-char-flex">
+                                <div class="char-thumb"><img src="images/niji_maria.webp"></div>
+                                <div class="char-thumb"><img src="images/niji_enna.webp"></div>
+                                <div class="char-thumb"><img src="images/niji_pomu.webp"></div>
+                                <div class="char-thumb"><img src="images/niji_ren.webp"></div>
+                                <div class="char-thumb"><img src="images/niji_vox.webp"></div>
+                            </div>
                         </div>
-                            
-                        <div class="info-content">
-                            <a href="https://www.instagram.com/diana._.33_shan?igsh=MXEyb3c3azRucHV2eA==" target="_blank" class="social-link">Instagram (追星公開帳號)</a>
+
+                        <div class="char-group">
+                            <div class="info-content">LoveLive!!：</div>
+                            <div class="fav-char-flex">
+                                <div class="char-thumb"><img src="images/ll1.webp"></div>
+                                <div class="char-thumb"><img src="images/ll2.webp"></div>
+                                <div class="char-thumb"><img src="images/ll3.webp"></div>
+                                <div class="char-thumb"><img src="images/ll4.webp"></div>
+                                <div class="char-thumb"><img src="images/ll5.webp"></div>
+                                <div class="char-thumb"><img src="images/ll6.webp"></div>
+                                <div class="char-thumb"><img src="images/ll7.webp"></div>
+                            </div>
+                        </div>
+
+                        <div class="char-group">
+                            <div class="info-content">BangDream & Chiikawa：</div>
+                            <span class="info-note">也有追D4DJ!</span>
+                            <span class="info-note">邦邦直接貼測驗結果XD 最愛燐燐 Mujica團推! Roselia永遠的神...</span>
+                            <div class="fav-char-flex">
+                                <div class="char-thumb"><img src="images/bg.webp" id="zoom-img" style="cursor: zoom-in;"></div>
+                                <div class="char-thumb"><img src="images/momonga.webp"></div>
+                            </div>
+                        </div>
+
+                        <div class="char-group">
+                            <div class="info-content">三次元：</div>
+                            <div class="fav-char-flex">
+                                <div class="char-thumb"><img src="images/nmc.webp"></div>
+                                <div class="char-thumb"><img src="images/kei.webp"></div>
+                            </div>
                         </div>
                     </li>
-
                 </ul>
-            </div> -->
+            </div>
 
         </section>
     </main>

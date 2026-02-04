@@ -6,6 +6,29 @@
     <title>marius</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/uplogo.webp" type="image/x-icon">
+    <style>
+        /* 1. 限制文字介紹區塊的寬度，使其與下方的白色色塊對齊 */
+        .about-text {
+            max-width: 800px !important; /* 與下方 .marius-center-box 寬度一致 */
+            margin: 0 auto 30px auto !important; /* 確保水平置中 */
+            width: 90% !important;
+            padding: 0 20px !important; /* 讓文字不貼邊，增加閱讀舒適度 */
+            text-align: left; /* 保持文字左對齊 */
+        }
+
+        /* 2. 讓頂部的「陸景和Marius」標題也縮回中間 */
+        .welcome-header {
+            max-width: 800px !important;
+            margin: 40px auto 20px auto !important;
+            width: 90% !important;
+        }
+
+        /* 3. 清除原本清單可能有的額外邊距 */
+        .info-list {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -46,58 +69,54 @@
                 <h1 class="welcome-title">陸景和Marius♾️</h1>
             </div>
 
-            <!-- <div class="about-text">
-                <p>目前在倫敦留學，垃圾話很多的宅宅夢女</p>
+            <div class="about-text">
+                <!-- <p>目前在倫敦留學，垃圾話很多的宅宅夢女</p> -->
                 <ul class="info-list">
 
                     <li>
-                        <strong>稱呼:33/Diana</strong>
-                        <div class="info-content">叫33比較快 留學後的現友都直接叫我Diana</div>
-                        <div class="info-content">認識多年的現友稱呼可隨意XD</div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>✨關於我本人：</strong>
-                        <div class="info-content">我的帳號我開心就好 相處兩人舒服即可</div>
-                        <div class="info-content">不適合可以直接刪友 不接受破鏡重圓</div>
-                        <div class="info-content">怎麼對待我就怎麼對待你</div>
-                        <div class="info-content">內鬼請離開謝謝 感恩的心🫶</div>
-                        <div class="info-content">偶爾會發日系穿搭照片</div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🆙主坑單+推角：</strong>
-                        <div class="info-content">未定事件簿 ♡陸景和</div>
-                        <div class="info-content">美男王子 ♡克拉維斯</div>
-                        <div class="info-content">戀與深空 ♡黎深</div>
-                        <div class="info-content">Chiikawa ♡Momonga</div>
-                        <div class="info-content">ASMRZ ♡車清一 </div>
-                        <div class="info-content">光與夜之戀 ♡蕭逸&查理蘇 </div>
-                        <div class="info-content">Lovelyz ♡Kei </div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🔅其餘坑單：</strong>
-                        <span class="info-note">推角很多不一一列出 基本上會追整個企畫或系列</span>
-                        <div class="info-content">LoveLive!! </div>
-                        <div class="info-content">BangDream</div>
-                        <div class="info-content">日本聲優 </div>
-                    </li>
-                    <br>
-                    <li>
-                        <strong>🌐Find Me</strong>
-                        <span class="info-note">IG有現生帳號 見過面再交換/我們真的很熟可以交換!</span>
-                        <div class="info-content">
-                            <a href="https://www.facebook.com/share/14TUYsykUCv/" target="_blank" class="social-link">臉書本帳 (私訊直接找這支)</a>
-                        </div>
-                            
-                        <div class="info-content">
-                            <a href="https://www.instagram.com/diana._.33_shan?igsh=MXEyb3c3azRucHV2eA==" target="_blank" class="social-link">Instagram (追星公開帳號)</a>
-                        </div>
-                    </li>
+                        <strong>未定事件簿</strong>
+                        <span class="info-note">開服玩家 2022年5月開始追v後退坑 2025年年初回坑</span>
+                        <span class="info-note">回坑一年覺得卡難抽很多&遊戲沒什麼進步 打算繼續佛了XD</span>
+                        
+                        <br>
+                        <b><div class="info-content">陸景和夢女 選拒同擔嫁 夢濃度逐漸降低</div></b>
+                        <div class="info-content">可加台服好友:100047498</div>
 
+                    </li>
                 </ul>
-            </div> -->
+                <!-- <div class="article-btn-container">
+                    <a href="妳的文章連結.html" class="article-action-btn">
+                        <span>📖 閱讀夢向圖文創作</span>
+                    </a>
+                </div> -->
+                <div class="article-btn-container">
+                        <button id="action-btn">📖 閱讀夢向文章創作</button>
+                </div>
+            </div>
+            <div class="marius-center-box">
+                <h2 class="gallery-title">♾️ 璃景夢回</h2>
+                <span class="info-note">私人委託請勿盜用!! (繪製: Arics/Ayu)</span>
+                
+                <div class="marius-grid-wrapper">
+                    <div class="marius-left-side">
+                        <div class="marius-img-item"><img src="images/marius_q.webp"></div>
+                        <div class="marius-img-item"><img src="images/marius_q2.webp"></div>
+                    </div>
+                    <div class="marius-right-side">
+                        <div class="marius-img-item portrait-mode"><img src="images/marius_v.webp"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marius-center-box">
+                <h2 class="gallery-title">♾️ 五周年婚卡委託</h2>
+                <span class="info-note">好喜歡所以我要放</span>
+                <span class="info-note">私人委託請勿盜用!! (繪製: kiki)</span>
+                
+                <div class="marius-full-display">
+                    <img src="images/marius_v2.webp">
+                </div>
+            </div>
 
         </section>
     </main>

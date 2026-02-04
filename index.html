@@ -6,6 +6,17 @@
     <title>Diana is FINE</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/uplogo.webp" type="image/x-icon">
+    <style>
+    /* 讓「最後更新」這行文字靠右 */
+        #hero .info-note {
+            display: block;      /* 變成區塊元素才能控制對齊 */
+            text-align: right;   /* 文字靠右對齊 */
+            width: 100%;         /* 確保佔滿容器寬度 */
+            margin-top: 10px;    /* 與上方的標籤文字拉開一點距離 */
+            padding-right: 10px; /* 讓文字不要死貼著最右邊邊緣 */
+        }
+    </style>
+
 </head>
 <body>
 
@@ -58,6 +69,7 @@
                     <img src="images/profile_zayne.webp" alt="黎深合照" class="mini-img">
                 </a>
             </div>
+            <span class="info-note">最後更新:2526/02/05</span>
         </section>
     </main>
 

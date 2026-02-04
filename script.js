@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const actionBtn = document.getElementById('action-btn');
     if (actionBtn) {
         actionBtn.addEventListener('click', function() {
-            alert('恭喜你！網站的 JavaScript 已經成功運作了！');
-            const title = document.querySelector('h1');
-            if (title) title.innerText = "你點擊了按鈕！";
+            // 只保留彈窗提示，不再改動頁面標題
+            alert('施工中 目前沒東西喔><');
         });
     }
 });
@@ -33,3 +32,25 @@ document.addEventListener('contextmenu', (e) => {
 document.addEventListener('dragstart', (e) => {
     if (e.target.tagName === 'IMG') e.preventDefault();
 });
+
+// 建立遮罩元素並加入 body
+const overlay = document.createElement('div');
+overlay.className = 'img-overlay';
+overlay.innerHTML = '<img src="">';
+document.body.appendChild(overlay);
+
+const zoomImg = document.getElementById('zoom-img');
+const overlayImg = overlay.querySelector('img');
+
+if (zoomImg) {
+    // 點擊圖片時放大
+    zoomImg.addEventListener('click', () => {
+        overlayImg.src = zoomImg.src;
+        overlay.style.display = 'flex';
+    });
+
+    // 點擊遮罩任何地方縮小回去
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+    });
+}
