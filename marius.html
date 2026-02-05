@@ -28,6 +28,40 @@
             margin: 0 !important;
             padding: 0 !important;
         }
+        /* 針對手機版 (螢幕寬度小於 768px) 的優化 */
+        @media (max-width: 768px) {
+            /* 1. 讓白色容器寬度自適應，不要死守 800px */
+            .marius-center-box, .about-text, .welcome-header {
+                width: 95% !important;
+                max-width: none !important;
+                padding: 15px !important;
+                margin: 20px auto !important;
+            }
+
+            /* 2. 三張直圖在手機上改為單列或雙列，避免太擠 */
+            .triple-portrait-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+                gap: 10px !important;
+            }
+
+            /* 3. 兩張直圖在手機上縮小間距 */
+            .double-portrait-grid {
+                width: 100% !important;
+                max-width: none !important;
+                gap: 10px !important;
+            }
+
+            /* 4. 遊戲 ID 列表如果太長，允許換行 */
+            .info-content {
+                flex-wrap: wrap;
+                line-height: 1.6;
+            }
+
+            /* 5. 讓標題文字在手機上小一點，避免折行太突兀 */
+            .welcome-title {
+                font-size: 1.8rem !important;
+            }
+        }
     </style>
 </head>
 <body>
