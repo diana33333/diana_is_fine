@@ -97,36 +97,36 @@
         }
         /* 針對手機版 (螢幕寬度小於 768px) 的優化 */
         @media (max-width: 768px) {
-            /* 1. 讓白色容器寬度自適應，不要死守 800px */
-            .marius-center-box, .about-text, .welcome-header {
-                width: 95% !important;
-                max-width: none !important;
-                padding: 15px !important;
-                margin: 20px auto !important;
+            /* 1. 確保大容器寬度對稱且不溢出 */
+            .marius-center-box {
+                width: 92% !important; 
+                padding: 15px !important; /* 縮小內距，留更多空間給圖片 */
+                box-sizing: border-box !important; 
+                margin: 15px auto !important; 
             }
 
-            /* 2. 三張直圖在手機上改為單列或雙列，避免太擠 */
+            /* 2. 強制三張圖在同一行，不換行 */
             .triple-portrait-grid {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-                gap: 10px !important;
-            }
-
-            /* 3. 兩張直圖在手機上縮小間距 */
-            .double-portrait-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important; /* 強制三列 */
+                gap: 8px !important; /* 縮小圖片間距，避免太擠 */
                 width: 100% !important;
-                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* 3. 確保圖片項目的邊距不會影響對齊 */
+            .marius-img-item {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            /* 4. 針對兩張圖的網格也做對齊修正 */
+            .double-portrait-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
                 gap: 10px !important;
-            }
-
-            /* 4. 遊戲 ID 列表如果太長，允許換行 */
-            .info-content {
-                flex-wrap: wrap;
-                line-height: 1.6;
-            }
-
-            /* 5. 讓標題文字在手機上小一點，避免折行太突兀 */
-            .welcome-title {
-                font-size: 1.8rem !important;
+                width: 100% !important;
+                margin: 0 !important;
             }
         }
     </style>
